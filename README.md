@@ -1,5 +1,7 @@
 # **Whack-a-Mole Game**
 
+## ![Image](Images/mainpic.jpg)
+
 ## **_Description_**
 
 Whack-a-Mole is an amusing game, the player should hit (click) on any appearing mole to get a score, there are 3 levels, in each level the required score value increases, the time decreases, and the number of holes increases. If the player completes the 3 levels successfully then there is a winner!
@@ -17,7 +19,7 @@ Whack-a-Mole is an amusing game, the player should hit (click) on any appearing 
 
 ## **_Wireframe_**
 
-![Image](Images/mainPage.png)
+## ![Image](Images/mainPage.png)
 
 ![Image](Images/levels.png)
 
