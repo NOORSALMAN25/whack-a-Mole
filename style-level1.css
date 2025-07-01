@@ -39,3 +39,7 @@ body {
   text-align: center;
   padding: 40px;
 }
+
+button {
+  margin: 10px;
+}
