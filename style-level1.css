@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.title {
+  /* display: flex;
+  justify-content: center;
+  align-content: center; */
+  text-align: center;
+  color: brown;
+}
+
+.nav-div {
+  text-align: center;
+}
+
+.nav-div nav {
+  padding: 30px 30px 80px 30px;
+}
+.score {
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  margin: 40px;
+  display: grid;
+  justify-content: center;
+  background-color: rgb(26, 109, 26);
+  border-radius: 7px;
+}
+.holes {
+  padding: 80px;
+  margin: 20px;
+  background-color: rgb(111, 76, 54);
+  border-radius: 50%;
+}
+.play-buttons {
+  text-align: center;
+  padding: 40px;
+}

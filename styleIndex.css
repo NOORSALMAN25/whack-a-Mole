@@ -1,0 +1,23 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.title {
+  /* display: flex;
+  justify-content: center;
+  align-content: center; */
+  text-align: center;
+  color: brown;
+}
+
+.nav-div {
+  text-align: center;
+}
+
+.rules {
+  text-align: center;
+}
+
+.start {
+  text-align: center;
+}
