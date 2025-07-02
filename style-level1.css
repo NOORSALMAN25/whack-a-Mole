@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 .title {
   /* display: flex;
@@ -17,9 +18,9 @@ body {
 .nav-div nav {
   padding: 30px 30px 80px 30px;
 }
-.score {
+.info {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .game {
