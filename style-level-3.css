@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.title {
+  /* display: flex;
+  justify-content: center;
+  align-content: center; */
+  text-align: center;
+  color: brown;
+}
+
+.nav-div {
+  text-align: center;
+}
+
+.nav-div nav {
+  padding: 20px 20px 20px 20px;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game {
+  /* margin: 40px; */
+  padding: 20px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-self: center;
+  background-color: rgb(26, 109, 26);
+  border-radius: 7px;
+}
+.holes {
+  padding: 80px;
+  margin: 20px;
+  background-color: rgb(111, 76, 54);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.play-buttons {
+  text-align: center;
+  padding: 10px 40px 40px 40px;
+}
+
+button {
+  margin: 10px;
+}

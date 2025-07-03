@@ -1,10 +1,8 @@
 // --------------- Cached elements references ---------------
 const playButton = document.querySelector('.play')
 const replayButton = document.querySelector('.replay')
-
 const hole = document.querySelectorAll('.holes')
 const score = document.querySelector('.score h3')
-
 const timer = document.querySelector('.timer h3')
 
 // --------------- Global variables ---------------
@@ -42,7 +40,6 @@ const timeCount = () => {
 // References , like : https://www.w3schools.com/js/js_timing.asp , https://www.programiz.com/javascript/setInterval
 
 // --------------- functions ---------------
-
 const endGame = () => {
   gameActive = false
   startTimer = false
@@ -64,6 +61,7 @@ const endGame = () => {
   if (currentScore >= targetScore) {
     timer.innerText = '🎉 You Won!'
   }
+
   playButton.disabled = true
 }
 
@@ -100,62 +98,60 @@ const moleAppearing = () => {
       moleInterval = null
     }
   }, 2000)
-
-  // Reference , like : https://www.w3schools.com/js/js_timing.asp , https://www.programiz.com/javascript/setInterval
-
-  const scoreCalculator = () => {
-    currentScore += 2
-    score.innerText = `⭐ SCORE : ${currentScore}`
-    if (currentScore >= 10) {
-      timer.innerText = '🎉 Target Reached!'
-      endGame()
-    }
-  }
-
-  const replayFunction = () => {
-    currentScore = 0
-    target = false
-    gameActive = false
-    isChange = false
-    startTimer = false
-
-    if (moleInterval) {
-      clearInterval(moleInterval)
-      moleInterval = null
-    }
-    timerTimeouts.forEach((timeout) => clearTimeout(timeout))
-    timerTimeouts = []
-
-    score.innerText = `⭐ SCORE : 0`
-    timer.innerText = `⌛ Ready!`
-    hole.forEach((holee) => {
-      holee.style.backgroundColor = ''
-    })
-    activeMoles.clear()
-    playButton.disabled = false
-    console.log('Game replay')
-  }
-
-  //--------------- Event Listeners Here ---------------
-
-  playButton.addEventListener('click', () => {
-    if (!gameActive) {
-      playTheGame()
-    }
-  })
-
-  replayButton.addEventListener('click', () => {
-    replayFunction()
-  })
-
-  hole.forEach((holeEl, index) => {
-    holeEl.addEventListener('click', () => {
-      if (activeMoles.has(index) && gameActive) {
-        scoreCalculator()
-
-        holeElement.style.backgroundColor = ''
-        activeMoles.delete(index)
-      }
-    })
-  })
 }
+
+// Reference , like : https://www.w3schools.com/js/js_timing.asp , https://www.programiz.com/javascript/setInterval
+
+const scoreCalculator = () => {
+  currentScore += 2
+  score.innerText = `⭐ SCORE : ${currentScore}`
+  if (currentScore >= 10) {
+    timer.innerText = '🎉 Target Reached!'
+    endGame()
+  }
+}
+const replayFunction = () => {
+  currentScore = 0
+  target = false
+  gameActive = false
+  isChange = false
+  startTimer = false
+
+  if (moleInterval) {
+    clearInterval(moleInterval)
+    moleInterval = null
+  }
+  timerTimeouts.forEach((timeout) => clearTimeout(timeout))
+  timerTimeouts = []
+
+  score.innerText = `⭐ SCORE : 0`
+  timer.innerText = `⌛ Ready!`
+  hole.forEach((holee) => {
+    holee.style.backgroundColor = ''
+  })
+  activeMoles.clear()
+
+  playButton.disabled = false
+}
+
+//--------------- Event Listeners Here ---------------
+
+playButton.addEventListener('click', () => {
+  if (!gameActive) {
+    playTheGame()
+  }
+})
+
+replayButton.addEventListener('click', () => {
+  replayFunction()
+})
+
+hole.forEach((holeEl, index) => {
+  holeEl.addEventListener('click', () => {
+    if (activeMoles.has(index) && gameActive) {
+      scoreCalculator()
+      holeEl.style.backgroundColor = ''
+      activeMoles.delete(index)
+    }
+  })
+})
