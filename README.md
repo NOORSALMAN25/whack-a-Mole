@@ -56,3 +56,13 @@ Levels Page
 ```
 
 ## **_Credits_**
+
+Java Script Reference :
+
+- [js-timimg](https://www.w3schools.com/js/js_timing.asp)
+
+- [js-setInterval](https://www.programiz.com/javascript/setInterval)
+
+- [js-DOM Button](https://www.w3schools.com/jsref/dom_obj_pushbutton.asp)
+
+- [js-set()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
