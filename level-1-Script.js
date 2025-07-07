@@ -6,7 +6,7 @@ const score = document.querySelector('.score h3')
 const timer = document.querySelector('.timer h3')
 
 // --------------- Global variables ---------------
-const targetScore = 10
+const targetScore = 15
 let target = false
 let currentScore = 0
 let gameActive = false
@@ -22,7 +22,7 @@ const timeCount = () => {
     timerTimeouts.forEach((timeout) => clearTimeout(timeout))
     timerTimeouts = []
 
-    for (let i = 20; i >= 0; i--) {
+    for (let i = 30; i >= 0; i--) {
       const timeout = setTimeout(() => {
         if (startTimer) {
           if (i === 0) {
@@ -32,7 +32,7 @@ const timeCount = () => {
             timer.innerText = `⌛ ${i}`
           }
         }
-      }, (20 - i) * 1000)
+      }, (30 - i) * 1000)
       timerTimeouts.push(timeout)
     }
   }
@@ -105,8 +105,8 @@ const moleAppearing = () => {
 const scoreCalculator = () => {
   currentScore += 2
   score.innerText = `⭐ SCORE : ${currentScore}`
-  if (currentScore >= 10) {
-    timer.innerText = '🎉 Target Reached!'
+  if (currentScore >= 15) {
+    timer.innerText = '🎉 You Won!'
     endGame()
   }
 }

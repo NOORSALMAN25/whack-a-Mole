@@ -6,7 +6,7 @@ const score = document.querySelector('.score h3')
 const timer = document.querySelector('.timer h3')
 
 // --------------- Global variables ---------------
-const targetScore = 10
+const targetScore = 35
 let target = false
 let currentScore = 0
 let gameActive = false
@@ -24,7 +24,7 @@ const timeCount = () => {
     timerTimeouts.forEach((timeout) => clearTimeout(timeout))
     timerTimeouts = []
 
-    for (let i = 20; i >= 0; i--) {
+    for (let i = 40; i >= 0; i--) {
       const timeout = setTimeout(() => {
         if (startTimer) {
           if (i === 0) {
@@ -34,7 +34,7 @@ const timeCount = () => {
             timer.innerText = `⌛ ${i}`
           }
         }
-      }, (20 - i) * 1000)
+      }, (40 - i) * 1000)
       timerTimeouts.push(timeout)
     }
   }
@@ -72,7 +72,7 @@ const playTheGame = () => {
   gameActive = true
   startTimer = true
   score.innerText = `⭐ SCORE : ${currentScore}`
-  timer.innerText = `⌛ 20`
+  timer.innerText = `⌛`
   timeCount()
   moleAppearing()
 }
@@ -109,7 +109,7 @@ const moleAppearing = () => {
       clearInterval(moleInterval)
       moleInterval = null
     }
-  }, 2000)
+  }, 1000)
 }
 
 // Reference , like : https://www.w3schools.com/js/js_timing.asp , https://www.programiz.com/javascript/setInterval
@@ -117,19 +117,19 @@ const moleAppearing = () => {
 const scoreCalculator = (index) => {
   const moleColor = activeColors[index]
   if (moleColor === 'red') {
-    currentScore -= 2
+    currentScore -= 5
   } else if (moleColor === 'pink') {
     currentScore += 2
   } else if (moleColor === '#945034') {
-    currentScore += 3
+    currentScore += 4
   }
 
   if (currentScore < 0) {
     currentScore = 0
   }
   score.innerText = `⭐ SCORE : ${currentScore}`
-  if (currentScore >= 10) {
-    timer.innerText = '🎉 Target Reached!'
+  if (currentScore >= 35) {
+    timer.innerText = '🎉 You Won!'
     endGame()
   }
   activeColors[index] = null
