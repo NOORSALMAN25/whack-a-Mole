@@ -84,7 +84,7 @@ const moleAppearing = () => {
       const randomHole = Math.floor(Math.random() * hole.length)
       const selectedHole = hole[randomHole]
       if (!activeMoles.has(randomHole)) {
-        selectedHole.style.backgroundColor = 'pink'
+        selectedHole.style.backgroundImage = 'pink'
         activeMoles.add(randomHole)
         setTimeout(() => {
           if (gameActive) {
