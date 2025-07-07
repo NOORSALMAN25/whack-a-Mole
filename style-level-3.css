@@ -1,52 +1,86 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  /* height: 100vh; */
+  background-image: url(./Images/back2.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+h1 {
+  font-family: 'Titan One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: #945034;
+}
+
+.title a {
+  text-decoration: none;
+  color: #945034;
 }
 .title {
-  /* display: flex;
-  justify-content: center;
-  align-content: center; */
   text-align: center;
-  color: brown;
 }
 
 .nav-div {
   text-align: center;
 }
 
-.nav-div nav {
-  padding: 20px 20px 20px 20px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+li {
+  display: inline;
+  margin-right: 15px;
+}
+
+li a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 27px;
+  background-color: aliceblue;
+  color: #945034;
+}
+
 .info {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 .game {
-  /* margin: 40px; */
-  padding: 20px 80px;
+  margin: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-self: center;
-  background-color: rgb(26, 109, 26);
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  justify-content: center;
+  /* background-color: rgb(26, 109, 26); */
   border-radius: 7px;
 }
 .holes {
   padding: 80px;
   margin: 20px;
-  background-color: rgb(111, 76, 54);
+  /* background-color: rgb(111, 76, 54); */
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
 }
 
 .play-buttons {
   text-align: center;
-  padding: 10px 40px 40px 40px;
+  padding: 40px;
 }
 
 button {
-  margin: 10px;
+  margin: 0px 5px;
+  width: 70px;
+  height: 20px;
+}
+
+.info h3 {
+  background-color: rgba(0, 0, 0, 50%);
+  border-radius: 7%;
 }

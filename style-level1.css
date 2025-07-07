@@ -14,15 +14,16 @@ h1 {
   font-size: 50px;
   color: #945034;
 }
+.title a {
+  text-decoration: none;
+  color: #945034;
+}
 .title {
   text-align: center;
-  color: brown;
 }
 
 .nav-div {
   text-align: center;
-  background-color: #dddd;
-  height: 40px;
 }
 
 ul {
@@ -41,6 +42,8 @@ li a {
   padding: 8px;
   text-decoration: none;
   font-size: 27px;
+  background-color: aliceblue;
+  color: #945034;
 }
 
 .info {
@@ -61,7 +64,7 @@ li a {
 .holes {
   padding: 80px;
   margin: 20px;
-  background-color: rgb(111, 76, 54);
+  /* background-color: rgb(111, 76, 54); */
   border-radius: 50%;
 }
 
@@ -71,5 +74,12 @@ li a {
 }
 
 button {
-  margin: 10px;
+  margin: 0px 5px;
+  width: 70px;
+  height: 20px;
+}
+
+.info h3 {
+  background-color: rgba(0, 0, 0, 50%);
+  border-radius: 7%;
 }
