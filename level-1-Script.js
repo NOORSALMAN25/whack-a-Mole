@@ -69,7 +69,7 @@ const playTheGame = () => {
   gameActive = true
   startTimer = true
   score.innerText = `⭐ SCORE : ${currentScore}`
-  timer.innerText = `⌛ 20`
+  timer.innerText = `⌛ `
   timeCount()
   moleAppearing()
 }
@@ -84,7 +84,7 @@ const moleAppearing = () => {
       const randomHole = Math.floor(Math.random() * hole.length)
       const selectedHole = hole[randomHole]
       if (!activeMoles.has(randomHole)) {
-        selectedHole.style.backgroundImage = 'pink'
+        selectedHole.style.backgroundColor = 'pink'
         activeMoles.add(randomHole)
         setTimeout(() => {
           if (gameActive) {
