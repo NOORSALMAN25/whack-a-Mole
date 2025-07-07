@@ -10,6 +10,8 @@ Whack-a-Mole (Colors Edition) is an amusing game, the player should hit (click) 
 
 ![Image](Images/updaterules.gif)
 
+[Game Link](https://whack-a-mole-game-ga.surge.sh/#)
+
 - Click the start button on the main page.
 - The game has three levels, by default, the player will begin with level 1.
 - The player should click on each appear Color to get a score.

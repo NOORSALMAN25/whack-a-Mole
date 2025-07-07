@@ -24,7 +24,7 @@ const timeCount = () => {
     timerTimeouts.forEach((timeout) => clearTimeout(timeout))
     timerTimeouts = []
 
-    for (let i = 35; i >= 0; i--) {
+    for (let i = 50; i >= 0; i--) {
       const timeout = setTimeout(() => {
         if (startTimer) {
           if (i === 0) {
@@ -34,7 +34,7 @@ const timeCount = () => {
             timer.innerText = `⌛ ${i}`
           }
         }
-      }, (35 - i) * 1000)
+      }, (50 - i) * 1000)
       timerTimeouts.push(timeout)
     }
   }
