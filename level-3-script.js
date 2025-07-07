@@ -15,6 +15,8 @@ let isChange = false
 let startTimer = false
 let moleInterval = null
 let timerTimeouts = []
+const colors = ['pink', 'red', '#945034']
+let activeColors = []
 
 // --------------- time count ---------------
 const timeCount = () => {
@@ -57,6 +59,7 @@ const endGame = () => {
     holeee.style.backgroundColor = ''
   })
   activeMoles.clear()
+  activeColors.clear()
 
   if (currentScore >= targetScore) {
     timer.innerText = '🎉 You Won!'
@@ -74,6 +77,11 @@ const playTheGame = () => {
   moleAppearing()
 }
 
+const randomColor = () => {
+  const randomIndex = Math.floor(Math.random() * colors.length)
+  return colors[randomIndex]
+}
+
 const moleAppearing = () => {
   if (moleInterval) {
     clearInterval(moleInterval)
@@ -84,12 +92,16 @@ const moleAppearing = () => {
       const randomHole = Math.floor(Math.random() * hole.length)
       const selectedHole = hole[randomHole]
       if (!activeMoles.has(randomHole)) {
-        selectedHole.style.backgroundColor = 'pink'
+        const randomC = randomColor()
+        selectedHole.style.backgroundColor = randomC // here should random appear pink and red
         activeMoles.add(randomHole)
+        activeColors[randomHole] = randomC
+
         setTimeout(() => {
           if (gameActive) {
             selectedHole.style.backgroundColor = ''
             activeMoles.delete(randomHole)
+            activeColors[randomHole] = null
           }
         }, 1000)
       }
@@ -102,13 +114,25 @@ const moleAppearing = () => {
 
 // Reference , like : https://www.w3schools.com/js/js_timing.asp , https://www.programiz.com/javascript/setInterval
 
-const scoreCalculator = () => {
-  currentScore += 2
+const scoreCalculator = (index) => {
+  const moleColor = activeColors[index]
+  if (moleColor === 'red') {
+    currentScore -= 2
+  } else if (moleColor === 'pink') {
+    currentScore += 2
+  } else if (moleColor === '#945034') {
+    currentScore += 3
+  }
+
+  if (currentScore < 0) {
+    currentScore = 0
+  }
   score.innerText = `⭐ SCORE : ${currentScore}`
   if (currentScore >= 10) {
     timer.innerText = '🎉 Target Reached!'
     endGame()
   }
+  activeColors[index] = null
 }
 const replayFunction = () => {
   currentScore = 0
@@ -130,6 +154,7 @@ const replayFunction = () => {
     holee.style.backgroundColor = ''
   })
   activeMoles.clear()
+  activeColors.clear()
 
   playButton.disabled = false
 }
@@ -149,9 +174,10 @@ replayButton.addEventListener('click', () => {
 hole.forEach((holeEl, index) => {
   holeEl.addEventListener('click', () => {
     if (activeMoles.has(index) && gameActive) {
-      scoreCalculator()
+      scoreCalculator(index)
       holeEl.style.backgroundColor = ''
       activeMoles.delete(index)
+      activeColors.delete(index)
     }
   })
 })
