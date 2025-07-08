@@ -10,15 +10,16 @@ const targetScore = 25
 let target = false
 let currentScore = 0
 let gameActive = false
-let activeMoles = new Set()
 let isChange = false
 let startTimer = false
 let moleInterval = null
 let timerTimeouts = []
 const colors = ['pink', 'red']
+let activeMoles = new Set()
 let activeColors = []
 
 // --------------- time count ---------------
+
 const timeCount = () => {
   if (startTimer) {
     timerTimeouts.forEach((timeout) => clearTimeout(timeout))
@@ -86,7 +87,6 @@ const moleAppearing = () => {
   if (moleInterval) {
     clearInterval(moleInterval)
   }
-
   moleInterval = setInterval(() => {
     if (gameActive && startTimer) {
       const randomHole = Math.floor(Math.random() * hole.length)

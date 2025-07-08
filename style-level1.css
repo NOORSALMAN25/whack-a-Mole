@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
 
-  background-image: url(./Images/back2.jpeg);
+  /* background-image: url(./Images/back2.jpeg); */
+  background-color: #b0db9c;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,6 +21,11 @@ h1 {
 
   color: #fcffe0;
 }
+
+.title a:hover {
+  color: #bf9264;
+}
+
 .title {
   text-align: center;
 }
@@ -76,7 +82,8 @@ li a {
 button {
   margin: 0px 5px;
   width: 70px;
-  height: 20px;
+  height: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .info h3 {
